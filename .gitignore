@@ -1,5 +1,6 @@
 *.tmc/
 pom.xml
 .checkstyle.xml
+.tmcproject.yml
 */target/
 course_config.toml

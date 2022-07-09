@@ -1,5 +1,4 @@
 
-import java.nio.file.attribute.UserDefinedFileAttributeView;
 import java.util.Scanner;
 
 public class SumOfNumbers {
