@@ -1,0 +1,5 @@
+*.tmc/
+pom.xml
+.checkstyle.xml
+*/target/
+course_config.toml
