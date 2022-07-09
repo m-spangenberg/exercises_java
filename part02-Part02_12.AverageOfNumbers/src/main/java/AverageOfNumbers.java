@@ -6,5 +6,24 @@ public class AverageOfNumbers {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        double sum = 0;
+        double count = 0;
+
+        while (true) {
+            System.out.println("Give a number:");
+            double userInput = Double.valueOf(scanner.nextLine());
+            
+            if (userInput != 0) {
+                sum += userInput;
+                count ++;
+                continue;
+            } else {
+                break;
+            }
+        }
+
+        System.out.println("Average of the numbers: " + (sum / count));
+
+        scanner.close();
     }
 }
