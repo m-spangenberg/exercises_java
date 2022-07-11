@@ -2,5 +2,7 @@
 pom.xml
 .checkstyle.xml
 .tmcproject.yml
+*.txt
+*.csv
 */target/
 course_config.toml
