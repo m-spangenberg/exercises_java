@@ -1,3 +1,4 @@
+import javax.swing.plaf.basic.BasicInternalFrameUI.InternalFramePropertyChangeListener;
 
 public class SumOfArray {
 
@@ -9,6 +10,10 @@ public class SumOfArray {
 
     public static int sumOfNumbersInArray(int[] array) {
         // Write some code here
-        return 0;
+        int total = 0;
+        for (int i : array) {
+            total += i;
+        }
+        return total;
     }
 }
