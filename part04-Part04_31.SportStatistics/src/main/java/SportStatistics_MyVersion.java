@@ -1,7 +1,7 @@
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-public class SportStatistics {
+public class SportStatistics_MyVersion {
 
     public static void main(String[] args) {
         // ask user for filename
