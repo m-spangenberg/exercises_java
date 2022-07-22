@@ -13,12 +13,16 @@ public class SportStatistics {
         Scanner scanTeam = new Scanner(System.in);
         System.out.println("Team: ");
         String teamName = scanTeam.nextLine();
-        Games team = new Games(teamName);
+
+        Games chosenTeam = new Games(teamName);
 
         // read match statistics from file
         try (Scanner teamScanner = new Scanner(Paths.get(filename))) {
             while (teamScanner.hasNextLine()) {
+
                 String line = teamScanner.nextLine();
+                
+                // split the line that's read into individual values
                 String[] game = line.split(",");
                 String homeTeam = game[0];
                 String visitingTeam = game[1];
@@ -27,18 +31,18 @@ public class SportStatistics {
 
                 // If the team is either home or away, it counts as a game
                 if (teamName.equals(homeTeam) || (teamName.equals(visitingTeam))) {
-                    team.teamGames();
+                    chosenTeam.teamGames();
 
                     // The below conditions will allow for a win or loss
                     if (teamName.equals(homeTeam) && homeTeamPoints > visitingTeamPoints) {
                         // count home match as win
-                        team.teamWins();
+                        chosenTeam.teamWins();
                     } else if (teamName.equals(visitingTeam) && visitingTeamPoints > homeTeamPoints) {
                         // count away match as win
-                        team.teamWins();
+                        chosenTeam.teamWins();
                     } else {
                         // count any match as loss
-                        team.teamLosses();
+                        chosenTeam.teamLosses();
                     }
                 }
             }            
@@ -48,14 +52,13 @@ public class SportStatistics {
         }
 
         // print games played
-        System.out.println("Games: " + team.getGames());
+        System.out.println("Games: " + chosenTeam.getGames());
 
         // print wins and losses
-        System.out.println("Wins: " + team.getWins());
-        System.out.println("Losses: " + team.getLosses());
+        System.out.println("Wins: " + chosenTeam.getWins());
+        System.out.println("Losses: " + chosenTeam.getLosses());
 
         scanFile.close();
         scanTeam.close();
     }
-
 }
