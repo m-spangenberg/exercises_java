@@ -17,6 +17,7 @@ public class NullPointerExceptionProgram {
 
         int index = 0;
         while (index < lines.size()) {
+            lines = null;
             System.out.println(lines.get(index));
             index++;
         }
