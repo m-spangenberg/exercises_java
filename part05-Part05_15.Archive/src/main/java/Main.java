@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,10 +6,11 @@ public class Main {
     public static void main(String[] args) {
         // create an archive list
         ArrayList<Archive> items = new ArrayList<>();
+        Scanner idScanner = new Scanner(System.in);
+        Scanner nameScanner = new Scanner(System.in);
         
         while (true) {
             // ask for object identifier, if empty: stop.
-            Scanner idScanner = new Scanner(System.in);
             System.out.println("Identifier? (empty will stop)");
             String identifier = idScanner.nextLine();
 
@@ -19,7 +19,6 @@ public class Main {
             }
 
             // ask for object name, if empty: stop.
-            Scanner nameScanner = new Scanner(System.in);
             System.out.println("Name? (empty will stop)");
             String name = nameScanner.nextLine();
 
@@ -41,5 +40,9 @@ public class Main {
         for (Archive item : items) {
             System.out.println(item);
         }
+
+        idScanner.close();
+        nameScanner.close();       
+
     }
 }
