@@ -7,7 +7,7 @@ public class Main {
         // create an archive list
         ArrayList<Archive> items = new ArrayList<>();
         Scanner idScanner = new Scanner(System.in);
-        Scanner nameScanner = new Scanner(System.in);
+        //Scanner nameScanner = new Scanner(System.in);
         
         while (true) {
             // ask for object identifier, if empty: stop.
@@ -20,9 +20,9 @@ public class Main {
 
             // ask for object name, if empty: stop.
             System.out.println("Name? (empty will stop)");
-            String name = nameScanner.nextLine();
+            String name = idScanner.nextLine();
 
-            if (identifier.isEmpty()) {
+            if (name.isEmpty()) {
                 break;
             }
 
@@ -36,13 +36,13 @@ public class Main {
         }
 
         System.out.println("===Items===");
-    
+
         for (Archive item : items) {
             System.out.println(item);
         }
 
-        idScanner.close();
-        nameScanner.close();       
+        //idScanner.close();
+        //nameScanner.close();
 
     }
 }

@@ -10,9 +10,8 @@ public class SportStatistics {
         String filename = scanFile.nextLine();
 
         // ask user for team name
-        Scanner scanTeam = new Scanner(System.in);
         System.out.println("Team: ");
-        String teamName = scanTeam.nextLine();
+        String teamName = scanFile.nextLine();
 
         Games chosenTeam = new Games(teamName);
 
@@ -59,6 +58,5 @@ public class SportStatistics {
         System.out.println("Losses: " + chosenTeam.getLosses());
 
         scanFile.close();
-        scanTeam.close();
     }
 }
