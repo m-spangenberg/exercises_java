@@ -19,4 +19,35 @@ public class SimpleCollection {
         return this.elements;
     }
     
+    @Override
+    public String toString() {
+
+        if (elements.isEmpty()) {
+            return "The collection " + this.name + " is empty.";
+        } else {
+
+            String itemInList = "";
+            String itemsInList = "";
+
+            itemInList += "The collection " + this.name + " has " + this.elements.size() + " element:\n";
+
+            itemsInList += "The collection " + this.name + " has " + this.elements.size() + " elements:\n";
+
+            for (String element : elements) {
+
+                if (this.elements.size() < 2) {
+                    itemInList += element;
+                } else {
+                    itemsInList += element + "\n";
+                }
+            }
+
+            if (this.elements.size() < 2) {
+                return itemInList;
+            } else {
+                return itemsInList;
+            }
+            
+        }
+    }
 }
