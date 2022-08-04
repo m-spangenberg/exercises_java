@@ -20,7 +20,7 @@ public class Grade {
     // average of the point-total
     public double averageAll() {
         int gradeTotal = 0;
-        for (int i = 0; i <= this.grades.size() - 1; i++) {
+        for (int i = 0; i < this.grades.size(); i++) {
             gradeTotal += this.grades.get(i);
         }
         return (double) gradeTotal / this.grades.size();
@@ -31,7 +31,8 @@ public class Grade {
     public double averagePassing() {
         double passTotal = 0;
         int passStudents = 0;
-        for (int i = 0; i <= this.grades.size() - 1; i++) {
+        
+        for (int i = 0; i < this.grades.size(); i++) {
             if (this.grades.get(i) >= 50) {
                 passTotal += this.grades.get(i);
                 passStudents++;
@@ -42,13 +43,13 @@ public class Grade {
 
     // percentage of submissions that passed
     public double percentagePassing() {
-        int passStudents = 0;
-        for (int i = 0; i <= this.grades.size() - 1; i++) {
-            if (this.grades.get(i) >= 50) {
-                passStudents++;
+        double passStudents = 0;
+        for (Integer grade : grades) {
+            if (grade >= 50) {
+                passStudents += 1;
             }
         }
-        return (double) ((passStudents / this.grades.size()) * 100);
+        return ((passStudents / this.grades.size()) * 100);
     }
 
     // distribute points to grades
