@@ -52,6 +52,14 @@ public class Grade {
         return ((passStudents / this.grades.size()) * 100);
     }
 
+    public String starGenerator(int starCount) {
+        String stars = "";
+        for (int i = 0; i < starCount; i++) {
+            stars += "*";
+        }
+        return stars;
+    }
+
     // distribute points to grades
     public void gradeDistribution() {
 
@@ -77,7 +85,9 @@ public class Grade {
 
         // print the distribution graph
         for (int i = 5; i >= 0; i--) {
-            System.out.println(i + ": " + "*".repeat(gdist[i]));
+            // this works in Java 11, curse you Java 8! ;_;
+            // System.out.println(i + ": " + "*".repeat(gdist[i]));
+            System.out.println(i + ": " + starGenerator(gdist[i]));
         }
     }
 }
