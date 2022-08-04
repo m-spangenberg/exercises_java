@@ -21,7 +21,6 @@ public class UI {
 
             int number = Integer.valueOf(this.scanner.nextLine());
 
-
             if (!(number == -1)) {
                 this.grades.addGrade(number);
             } else {
@@ -29,10 +28,16 @@ public class UI {
             }
         }
 
-        System.out.println("Point average (all): " + (double) this.grades.averageAll());
-        System.out.println("Point average (passing): " + (double) this.grades.averagePassing());
-        System.out.println("Pass percentage: " + (double) this.grades.percentagePassing());
-        System.out.println("Grade distribution: ");
+        System.out.println("Point average (all): " + this.grades.averageAll());
+
+        if (this.grades.averagePassing() != 0) {
+            System.out.println("Point average (passing): " + this.grades.averagePassing());
+        } else {
+            System.out.println("Point average (passing): -");
+        }
         
+        System.out.println("Pass percentage: " + this.grades.percentagePassing());
+        System.out.println("Grade distribution: ");
+        this.grades.gradeDistribution();
     }
 }
