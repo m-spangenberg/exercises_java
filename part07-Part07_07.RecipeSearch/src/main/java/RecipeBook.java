@@ -29,7 +29,7 @@ public class RecipeBook {
                     if (filescanner.hasNextLine()) {
                         String line = filescanner.nextLine();
 
-                        if (!(line.isBlank())) {
+                        if (!(line.matches(""))) {
                             recipe.add(line);
                             continue;
                         }
@@ -64,8 +64,8 @@ public class RecipeBook {
     public void findIngredient(String ingredient) {
         System.out.println("Recipes:");
         for (ArrayList<String> recipe : this.recipes) {
-                for (int i = 2; i <= recipe.size(); i++) {
-                    if (recipe.get(i).contains(ingredient)) {
+            for (int i = 2; i <= recipe.size() - 1; i++) {
+                    if (recipe.get(i).equals(ingredient)) {
                     System.out.println(recipe.get(0) + ", cooking time: " + recipe.get(1));
                 }
             }
