@@ -1,5 +1,3 @@
-import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class RecipeUI {
@@ -20,6 +18,7 @@ public class RecipeUI {
         // ask the user for an input file
         System.out.println("File to read: ");
         String file = this.scanner.nextLine();
+        recipeBook.ingest(file);
         
         // list the available commands
         System.out.println("Commands:");
@@ -27,13 +26,45 @@ public class RecipeUI {
         System.out.println("stop - stops the program");
         System.out.println("find name - searches recipes by name");
         System.out.println("find cooking time - searches recipes by cooking time");
+        System.out.println("find ingredient - searches recipes by ingredient");
 
         while (true) {
             System.out.println("Enter command: ");
-            int command = this.scanner.nextLine();
+            String command = this.scanner.nextLine();
 
             if (!(command.equals("stop"))) {
-                //do something;
+                
+                switch (command) {
+                    case "find cooking time":
+                        System.out.println("Max cooking time: ");
+                        String searchTime = this.scanner.nextLine();
+                        // Recipes:
+                        // Meatballs, cooking time: 20
+                        // Tofu rolls, cooking time: 30
+                        break;
+                    case "find name":
+                        System.out.println("Searched word: ");
+                        String searchName = this.scanner.nextLine();
+                        // Recipes:
+                        // Tofu rolls, cooking time: 30
+                        break;
+                    case "find ingredient":
+                        System.out.println("Ingredient: ");
+                        String searchIngredient = this.scanner.nextLine();
+                        // Recipes:
+                        // Pancake dough, cooking time: 60
+                        // Meatballs, cooking time: 20
+                        break;
+                    case "list":
+                        // Recipes:
+                        // Pancake dough, cooking time: 60
+                        // Meatballs, cooking time: 20
+                        // Tofu rolls, cooking time: 30
+                        break;
+                    case "stop":
+                        break;
+                }
+
             } else {
                 break;
             }
@@ -41,26 +72,3 @@ public class RecipeUI {
     }
         
 }
-
-// UI
-// read recipe file and place it into memory
-// a way to retrieve recipes from file...
-// File to read: recipes.txt
-// a way to store recipes in memory
-// RecipeBook.java
-
-// list recipes in the following format...
-// Recipes:
-// Pancake dough, cooking time: 60
-// Meatballs, cooking time: 20
-// Tofu rolls, cooking time: 30and stop
-
-// a way to search for recipes based on: name, cooking time, ingredients
-
-// find recipe by name
-// Enter command: find name
-// Searched word: roll
-// Recipes:
-// Tofu rolls, cooking time: 30
-
-// Enter command:  stop

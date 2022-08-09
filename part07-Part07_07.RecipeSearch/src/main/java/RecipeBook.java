@@ -5,14 +5,16 @@ import java.util.Scanner;
 public class RecipeBook {
 
     // instance variables
-    
+    private ArrayList<String> recipes;
+    private ArrayList<String> recipe;
 
-    // constructor
+    // parameter free constructor
     public RecipeBook() {
         this.recipes = new ArrayList<>();
+        this.recipe = new ArrayList<>();
     }
 
-    // class method - import recipes from file
+    // import recipes from file and populate recipe book
     public static void recipeImport(String filename) {
         ArrayList<String> list = new ArrayList<>();
 
@@ -25,4 +27,24 @@ public class RecipeBook {
         }
     }
 
+    // find name
+    public void findRecipeName(String name) {
+
+    }
+
+    // find ingredient
+    public void findIngredient(String ingredient) {
+
+    }
+
+    // find cooking time with a maximum parameter
+    public void findCookingTime(String max) {
+
+    }
+
+    // list all recipes
+    public void listRecipes() {
+        // print each recipe as follows
+        // Pancake dough, cooking time: 60
+    }
 }
