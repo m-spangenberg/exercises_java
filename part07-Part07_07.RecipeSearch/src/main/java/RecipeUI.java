@@ -18,7 +18,8 @@ public class RecipeUI {
         // ask the user for an input file
         System.out.println("File to read: ");
         String file = this.scanner.nextLine();
-        recipeBook.ingest(file);
+        recipeBook.recipeImport(file);
+        System.out.println("");
         
         // list the available commands
         System.out.println("Commands:");
@@ -27,6 +28,7 @@ public class RecipeUI {
         System.out.println("find name - searches recipes by name");
         System.out.println("find cooking time - searches recipes by cooking time");
         System.out.println("find ingredient - searches recipes by ingredient");
+        System.out.println("");
 
         while (true) {
             System.out.println("Enter command: ");
@@ -38,37 +40,30 @@ public class RecipeUI {
                     case "find cooking time":
                         System.out.println("Max cooking time: ");
                         String searchTime = this.scanner.nextLine();
-                        // Recipes:
-                        // Meatballs, cooking time: 20
-                        // Tofu rolls, cooking time: 30
+                        recipeBook.findCookingTime(searchTime);
                         break;
                     case "find name":
                         System.out.println("Searched word: ");
                         String searchName = this.scanner.nextLine();
-                        // Recipes:
-                        // Tofu rolls, cooking time: 30
+                        recipeBook.findRecipeName(searchName);
                         break;
                     case "find ingredient":
                         System.out.println("Ingredient: ");
                         String searchIngredient = this.scanner.nextLine();
-                        // Recipes:
-                        // Pancake dough, cooking time: 60
-                        // Meatballs, cooking time: 20
+                        recipeBook.findIngredient(searchIngredient);
                         break;
                     case "list":
-                        // Recipes:
-                        // Pancake dough, cooking time: 60
-                        // Meatballs, cooking time: 20
-                        // Tofu rolls, cooking time: 30
+                        recipeBook.listRecipes();
                         break;
                     case "stop":
                         break;
                 }
 
+            System.out.println("");
+
             } else {
                 break;
             }
         }
-    }
-        
+    }  
 }
